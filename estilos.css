@@ -1,10 +1,6 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-.cabecalho {
-    padding: 15px 25px;
+/* Configuracoes basicas */
+body {
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,25 +8,33 @@
 
 }
 
+/* Estrutura do Cartao (Flip Card) */
 .cartao {
     width: 260px;
     height: 200px;
 }
 
+/* Frente e Verso */
 .cartao-frente, .cartao-verso {
+    position: absolute;
     width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Oculta o verso quando virado */
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: white;
+    padding: 15px;
+    box-sizing: border-box;
 }
 
 .cartao-imagem {
     width: 100%;
+    border-radius: 5px;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main {
-    flex: 1;
+/* Estilo especifico do Verso */
+.cartao-verso {
+    background-color: #e3f2fd;
+    transform: rotateY(180deg); /* Comeca invertido */
 }
